@@ -1,7 +1,25 @@
 {
-  "name": "l-form",
+  "name": "@lazyb/l-form",
   "version": "0.1.0",
-  "private": true,
+  "description": "schema form depends on vue and element-ui",
+  "keywords": [
+    "vue",
+    "element-ui",
+    "form",
+    "schema"
+  ],
+  "author": {
+    "name": "lazy-b",
+    "email": "2280042554@qq.com"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lazy-b/l-form.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
