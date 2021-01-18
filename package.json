@@ -23,20 +23,74 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "lint:js": "eslint --no-error-on-unmatched-pattern --ext .js,.jsx,.vue,.ts,.tsx src",
+    "lint:style": "stylelint --allow-empty-input src/**/*.{vue,css,less,sass,scss}",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:style -- --fix",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,vue,css,scss,sass,less}",
+    "commit": "git cz"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@meicloud/prettier-config": "0.0.1",
+    "@meicloud/stylelint-config": "^1.0.0",
     "@types/jest": "^24.0.19",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
-    "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^2.2.0",
+    "stylelint": "^13.8.0",
+    "typescript": "^3.9.7",
+    "validate-commit-msg": "^2.14.0",
+    "vue-template-compiler": "^2.6.11",
+    "eslint": "^7.4.0",
+    "@meicloud/eslint-config": "^1.0.4",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@meicloud/eslint-config",
+      "@vue/prettier",
+      "@vue/prettier/@typescript-eslint"
+    ]
+  },
+  "prettier": "@meicloud/prettier-config",
+  "stylelint": {
+    "extends": [
+      "@meicloud/stylelint-config"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,vue}": [
+      "eslint --fix --no-error-on-unmatched-pattern",
+      "git add"
+    ],
+    "*.{vue,css,less,sass,scss}": [
+      "stylelint --fix --allow-empty-input",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged"
+    }
   }
 }
