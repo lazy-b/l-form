@@ -129,5 +129,23 @@ export interface LazyForm extends Vue {
 export interface FormConfig {
   form?: object;
   formItems?: CustomConfig[];
-  ui?: object;
+  ui?: CustomUiConfig[];
+}
+
+// 用户布局配置
+export interface CustomUiConfig {
+  $$row?: object; // 当前列的配置
+  [formKey: string]: number | object; // 每个 key 对应的列配置
+}
+
+// 规范化后的布局配置
+export interface NormalizeUiConfig {
+  row: object;
+  cols: { span: number; $$key: string }[];
+}
+
+// 最终的布局配置
+export interface UiConfg {
+  row: object;
+  cols: { span: number; $$key: string; $$field: ItemConfig }[];
 }

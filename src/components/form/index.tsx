@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { CustomConfig, NormalizeConfig, ItemConfig } from './index.d';
+import { CustomConfig, NormalizeConfig, ItemConfig, CustomUiConfig, NormalizeUiConfig, UiConfg } from './index.d';
 import { cloneDeep, pick } from 'lodash';
-import { computeItems, normConfigs, INNER_COMPONENT, has } from './utils';
+import { computeItems, normConfigs, INNER_COMPONENT, has, getType } from './utils';
 
 const CLASS_PREFEX = 'l-form';
 const FORM_TAG = 'el-form';
@@ -38,7 +38,7 @@ const LForm = Vue.extend({
     return {
       form: {} as { [prop: string]: any },
 
-      formItems: [] as NormalizeConfig[], // 计算后的配置项
+      formItems: [] as NormalizeConfig[], // 规范化后的配置项
       fields: [] as ItemConfig[], // 根据 form 的值动态计算出来的配置项
 
       valueChangeCount: 0,
@@ -55,6 +55,106 @@ const LForm = Vue.extend({
       const target = pick(form, $$keys);
 
       return target;
+    },
+    // fields 的映射，方便快速定位
+    fieldsMap() {
+      const { fields } = this;
+      const map = {} as any;
+
+      fields.forEach((f, i) => {
+        map[f.key] = { ...f, $$index: i };
+      });
+
+      return map;
+    },
+
+    // 最终渲染使用的配置
+    layouts() {
+      const { uiConfigs, fieldsMap } = this as any;
+
+      const layouts = uiConfigs
+        .map((nc: NormalizeUiConfig) => {
+          const uiConfig = { row: nc.row } as UiConfg;
+          uiConfig.cols = nc.cols
+            .map((c) => {
+              const field = fieldsMap[c.$$key] as ItemConfig;
+              if (field) {
+                return { ...c, $$field: field };
+              }
+              return false;
+            })
+            .filter(Boolean) as any;
+
+          if (uiConfig.cols.length) {
+            return uiConfig;
+          }
+          return false;
+        })
+        .filter(Boolean);
+
+      return layouts;
+    },
+
+    // 布局
+    uiConfigs() {
+      const {
+        config: { ui },
+        formItems,
+      } = this as any;
+      // const DEFAULT_ROW = {};
+      const uiMap = (ui as CustomUiConfig[]).reduce((acc: any, curr: object, i: number) => {
+        Object.keys(curr).forEach((k) => {
+          acc[k] = { index: i, row: curr };
+        });
+        return acc;
+      }, {});
+
+      const hasMap = {} as any;
+
+      const simpleConfigs = formItems
+        .map((conf: any) => {
+          const k = conf.key;
+          if (hasMap[k]) {
+            return;
+          }
+
+          const uiConf = { [k]: 24, $$row: {} } as CustomUiConfig;
+          const taget = uiMap[k];
+          if (taget) {
+            uiConf[k] = taget.row[k];
+            uiConf.$$row = taget.row.$$row || uiConf.$$row;
+            hasMap[k] = true;
+
+            Object.keys(taget.row).forEach((tk: any) => {
+              if (tk !== k && tk !== '$$row') {
+                uiConf[tk] = taget.row[tk];
+                hasMap[tk] = true;
+              }
+            });
+          }
+
+          return uiConf;
+        })
+        .filter(Boolean);
+
+      const uiConfig = simpleConfigs.map((conf: CustomConfig) => {
+        const ui = { row: conf.$$row, cols: [] } as NormalizeUiConfig;
+
+        Object.keys(conf)
+          .filter((k) => k !== '$$row')
+          .forEach((k) => {
+            const v = conf[k];
+            if (getType(v) === 'Object') {
+              ui.cols.push({ ...v, $$key: k });
+            } else {
+              ui.cols.push({ span: v, $$key: k });
+            }
+          });
+
+        return ui;
+      });
+
+      return uiConfig;
     },
   },
 
@@ -314,7 +414,7 @@ const LForm = Vue.extend({
 
   render(_c) {
     const {
-      fields,
+      layouts,
       $$renderItem,
       form,
       $attrs = {},
@@ -322,8 +422,27 @@ const LForm = Vue.extend({
       $$renderFooter,
       config: { form: formConfig },
     } = this as any;
-    const items = fields.map((field: any) => $$renderItem(field));
 
+    const main = layouts.map((ui: UiConfg) => {
+      const cols = ui.cols.map((col) => {
+        const colProp = { ...col } as any;
+        const $$key = col.$$key;
+        const field = col.$$field;
+        delete colProp.$$key;
+        delete colProp.$$field;
+
+        return (
+          <el-col {...{ props: colProp }} key={$$key}>
+            {$$renderItem(field)}
+          </el-col>
+        );
+      });
+
+      return <el-row {...{ props: ui.row }}>{cols}</el-row>;
+    });
+    // const items = fields.map((field: any) => $$renderItem(field));
+
+    // console.log(this.layouts)
     // jsx 插件 将 model 识别为了 v-model 会报错
     // return (
     //   <FORM_TAG
@@ -344,7 +463,7 @@ const LForm = Vue.extend({
         },
         ref: 'rawForm',
       },
-      [...items, _c('div', $slots.default), $slots.footer ? _c('div', $slots.footer) : $$renderFooter()]
+      [...main, _c('div', $slots.default), $slots.footer ? _c('div', $slots.footer) : $$renderFooter()]
     );
   },
 });

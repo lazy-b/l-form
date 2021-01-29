@@ -21,6 +21,9 @@ const isFn = (target: any): boolean => target instanceof Function;
  */
 export const has = (obj: {}, key: string): boolean => Object.prototype.hasOwnProperty.call(obj, key);
 
+// 获取准确的type
+export const getType = (t: any) => Object.prototype.toString.call(t).slice(8, -1);
+
 // 以防万一用户没配置 key
 const getKey = (config: CustomConfig) => config.key || JSON.stringify(config);
 const getTrue = () => true;
