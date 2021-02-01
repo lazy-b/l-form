@@ -102,7 +102,7 @@ const LForm = Vue.extend({
         formItems,
       } = this as any;
       // const DEFAULT_ROW = {};
-      const uiMap = (ui as CustomUiConfig[]).reduce((acc: any, curr: object, i: number) => {
+      const uiMap = ((ui as CustomUiConfig[]) || []).reduce((acc: any, curr: object, i: number) => {
         Object.keys(curr).forEach((k) => {
           acc[k] = { index: i, row: curr };
         });
@@ -322,7 +322,11 @@ const LForm = Vue.extend({
     },
 
     $$renderFooter() {
-      const { config: form = {}, $$confirm, $$cancel } = this;
+      const {
+        config: { form = {} },
+        $$confirm,
+        $$cancel,
+      } = this;
       const submitText = form.submitText || [];
       const confirmText = submitText[0] || '确定';
       const cancelText = submitText[1] || '取消';
