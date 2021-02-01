@@ -29,13 +29,12 @@ const getKey = (config: CustomConfig) => config.key || JSON.stringify(config);
 const getTrue = () => true;
 const getPropsFn = (data: object) => () => data;
 
-const DELETE_KEYS = ['key', 'props', 'itemKey', 'label', 'modifiers', 'ifRender', 'labelWidth', 'required'];
+const DELETE_KEYS = ['key', 'props', 'label', 'modifiers', 'ifRender', 'labelWidth', 'required'];
 
 function normalizeItemConfig(config: CustomConfig, typeMap: TypeMap): NormalizeConfig {
   const conf = { ...config };
   const itemConf = {} as NormalizeConfig;
   itemConf.key = getKey(config);
-  itemConf.itemKey = conf.itemKey || itemConf.key;
   itemConf.modifiers = conf.modifiers || [];
   itemConf.ifRender = conf.ifRender || getTrue;
 

@@ -65,7 +65,6 @@
 
 // 表单项的配置（计算后的结果）
 export interface ItemConfig {
-  itemKey: string;
   key: string;
   modifiers: string[]; // v-mode 的修饰符
   label: string; // 表单项的展示 label 名
@@ -93,7 +92,6 @@ interface BaseConfig {
 
 // 表单项的配置（用户配置）
 export interface CustomConfig extends BaseConfig {
-  itemKey?: string; // 表单项绑定项的 key 没有则取下方的属性 key
   key: string; // 表单项绑定值的属性名
   label?: string; // 表单项的展示 label 名
   type?: string; // 表单项的类型，由 typeMap 定义映射
@@ -101,7 +99,6 @@ export interface CustomConfig extends BaseConfig {
 
 // 规范化之后的配置
 interface NormalizeConfig {
-  itemKey: string;
   key: string;
   modifiers?: string[]; // v-mode 的修饰符
   label: string; // 表单项的展示 label 名

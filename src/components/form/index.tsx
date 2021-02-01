@@ -167,7 +167,6 @@ const LForm = Vue.extend({
         const formItems = normConfigs(confs, cloneDeep(typeMap));
 
         this.formItems = formItems;
-        this.$$initForm();
         this.refreshUI(false);
       },
       immediate: true,
@@ -176,13 +175,20 @@ const LForm = Vue.extend({
     // value 改变了就给 form 赋值，只更新
     value: {
       handler(val) {
+        // 防止死循环
+        if (this.valueChangeCount > 0) {
+          this.valueChangeCount--;
+          return;
+        }
+
+        if (Object.keys(val || {}).length < 1) {
+          return;
+        }
+
         const value = cloneDeep(val || {});
         const { form } = this;
         // 直接替换，触发对新属性的双向绑定
         this.form = { ...form, ...value };
-
-        // 计数器加 1 ，取消当前赋值导致的更新事件派发
-        this.valueChangeCount++;
       },
       immediate: true,
       deep: true,
@@ -192,26 +198,15 @@ const LForm = Vue.extend({
       handler() {
         this.refreshUI(false);
       },
-      immediate: true,
       deep: true,
     },
     // formValue 改变了 则派发一次 input 事件 并计数，
     // 防止和 value 的watch 形成死循环
     formValue: {
-      handler(val, oldValue) {
-        // 由于 valueChangeCount 标记的作用
-        // 主动对 value 赋值将不会派发循环的 input 事件
-        if (this.valueChangeCount > 0) {
-          this.valueChangeCount--;
-          return;
-        }
-
-        const same = stringify(val) === stringify(oldValue);
-        if (same) return;
-
+      handler(val) {
         this.$emit('input', val);
+        this.valueChangeCount++;
       },
-      // immediate: true,
       deep: true,
     },
   },
@@ -227,31 +222,6 @@ const LForm = Vue.extend({
   },
 
   methods: {
-    /** --------------- 说明 -------------  */
-    // // 添加对外暴露校验方法
-    // // noTips 校验未通过的时候不弹提示 toast
-    // validate(noTips) {
-    //   return new Promise((resolve, reject) => {
-    //     this.$$validateFields((err, value) => {
-    //       if (!err) {
-    //         resolve(value);
-    //       } else {
-    //         reject(err);
-    //       }
-    //     }, noTips);
-    //   });
-    // },
-
-    // // 校验表单
-    // $$validateFields(cb = noop, noTips) {
-    //   this.validator.validate(this.value, (errors) => {
-    //     if (!noTips && errors && errors.length > 0) {
-    //       LForm.showError(errors);
-    //     }
-    //     cb(errors, { ...this.value });
-    //   });
-    // },
-
     // 重置表单
     reset(val = {}) {
       this.form = { ...val };
@@ -280,17 +250,6 @@ const LForm = Vue.extend({
       const rawForm = this.$refs.rawForm as any;
 
       rawForm && rawForm.clearValidate();
-    },
-
-    // 根据配置项，初始化表单的双向绑定属性名
-    $$initForm() {
-      const keys = this.formItems.map((item: any) => item.key).filter(Boolean);
-      const { form } = this;
-      keys.forEach((k) => {
-        if (!has(form, k)) {
-          this.$set(form, k, null);
-        }
-      });
     },
 
     // 更新表单项的配置列表
