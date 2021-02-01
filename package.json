@@ -32,14 +32,15 @@
     "commit": "git cz"
   },
   "peerDependencies": {
-    "vue": "^2.6.11",
     "core-js": "^3.6.5",
-    "element-ui": "^2.15.0"
+    "element-ui": "^2.15.0",
+    "vue": "^2.6.11"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash": "^4.14.168",
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
     "@meicloud/eslint-config": "^1.0.4",
     "@meicloud/prettier-config": "0.0.1",
     "@meicloud/stylelint-config": "^1.0.0",
@@ -51,6 +52,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
     "commitizen": "^3.1.1",
+    "core-js": "^3.6.5",
     "cz-conventional-changelog": "^3.0.2",
     "element-ui": "^2.15.0",
     "eslint": "^7.4.0",
@@ -61,6 +63,7 @@
     "stylelint": "^13.8.0",
     "typescript": "^3.9.7",
     "validate-commit-msg": "^2.14.0",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -69,7 +72,10 @@
       "@meicloud/eslint-config",
       "@vue/prettier",
       "@vue/prettier/@typescript-eslint"
-    ]
+    ],
+    "rules": {
+      "@typescript-eslint/no-explicit-any": 0
+    }
   },
   "prettier": "@meicloud/prettier-config",
   "stylelint": {
