@@ -114,13 +114,14 @@ interface NormalizeConfig {
 
 // 表单项的默认配置映射
 interface TypeMap {
-  [propName: string]: BaseConfig;
+  [typeName: string]: BaseConfig;
 }
 
 export interface LazyForm extends Vue {
   typeMap: TypeMap; // 全局的表单项类型映射
-  // setTypeMap: Function; // 自定义全局的表单项类型映射
-  // defaultType: string; // 不写定义表单项类型时默认的类型
+  setTypeMap: Function; // 自定义全局的表单项类型映射
+  installed?: boolean; // 组件是否已经全局安装
+  install: (vue: Vue, options: { name?: string; typeMap: TypeMap }) => void; // 组件是否已经全局安装
 }
 
 export interface FormConfig {

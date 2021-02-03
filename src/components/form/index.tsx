@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { CustomConfig, NormalizeConfig, ItemConfig, CustomUiConfig, NormalizeUiConfig, UiConfg } from './index.d';
 import { cloneDeep, pick } from 'lodash';
-import { computeItems, normConfigs, INNER_COMPONENT, has, getType } from './utils';
+import { computeItems, normConfigs, INNER_COMPONENT, getType } from './utils';
 
 const CLASS_PREFEX = 'l-form';
 const FORM_TAG = 'el-form';
@@ -430,5 +430,22 @@ const LForm = Vue.extend({
     );
   },
 });
+
+(LForm as any).typeMap = {};
+(LForm as any).setTypeMap = ($$typeMap = {}) => {
+  Object.assign((LForm as any).typeMap, $$typeMap);
+};
+(LForm as any).install = function install(Vue: any, options = {}) {
+  if ((LForm as any).installed) return;
+  (LForm as any).installed = true;
+
+  const { name, typeMap } = options as any;
+
+  if (typeMap) {
+    (LForm as any).setTypeMap(typeMap);
+  }
+
+  Vue.component(name || (LForm as any).name, LForm);
+};
 
 export default LForm;
