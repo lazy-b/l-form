@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { CustomConfig, NormalizeConfig, ItemConfig, CustomUiConfig, NormalizeUiConfig, UiConfg } from './index.d';
-import { cloneDeep, pick } from 'lodash';
+import { cloneDeep, pick } from 'lodash-es';
 import { computeItems, normConfigs, INNER_COMPONENT, getType } from './utils';
 
 const CLASS_PREFEX = 'l-form';
@@ -32,6 +32,9 @@ const LForm = Vue.extend({
         return {};
       },
     },
+
+    // 支持外部显式传入 parent
+    parent: {},
   },
 
   data() {
@@ -371,7 +374,7 @@ const LForm = Vue.extend({
     },
     // 得到当前组件配置文件所在的组件
     $$getParent() {
-      return this.$vnode && this.$vnode.context;
+      return (this.parent as Vue) || (this.$vnode && this.$vnode.context);
     },
   },
 

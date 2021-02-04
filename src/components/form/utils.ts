@@ -1,5 +1,5 @@
 import { CustomConfig, NormalizeConfig, ItemConfig, TypeMap } from './index.d';
-import { pick } from 'lodash';
+import { pick } from 'lodash-es';
 // 内置的组件映射
 export const INNER_COMPONENT: TypeMap = {
   slot: { component: 'slot' },
