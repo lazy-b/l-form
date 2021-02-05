@@ -243,7 +243,7 @@ const LForm = Vue.extend({
       rawForm &&
         rawForm.validate((valid: any) => {
           if (valid) {
-            this.$emit('submit', this.form);
+            this.$emit('submit', this.formValue);
           }
         });
     },
