@@ -1,0 +1,962 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DemoContainer 1`] = `
+<div>
+  <div class="el-row" style="margin-left: -10px; margin-right: -10px;">
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>取消</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - 带表单校验</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>取消</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-20 el-row" style="margin-left: -10px; margin-right: -10px;">
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - 自定义布局</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-12">
+                <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+              <div class="el-col el-col-12">
+                <div class="el-form-item is-required"><label for="name2" class="el-form-item__label" style="width: 100px;">活动名称2</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-12">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+              <div class="el-col el-col-12">
+                <div class="el-form-item"><label for="delivery2" class="el-form-item__label" style="width: 100px;">即时配送2</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>取消</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - 带表单联动</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>取消</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-20 el-row" style="margin-left: -10px; margin-right: -10px;">
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - 自定义提交按钮文本</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定以及肯定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>狠心放弃</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="el-col el-col-12" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - 插槽</div>
+        <div class="el-card__body">
+          <form class="el-form" label-width="100px">
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <h3>我是自定义的表单项</h3>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                      <!----><span class="el-switch__core" style="width: 40px;"></span>
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="slotField-name" class="el-form-item__label" style="width: 100px;">一个自定义输入元素的表单项</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <h3>我是表单项的自定义输入元素</h3>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-row">
+              <div class="el-col el-col-24">
+                <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+                  <div class="el-form-item__content" style="margin-left: 100px;">
+                    <div class="el-input">
+                      <!----><input type="text" autocomplete="off" class="el-input__inner">
+                      <!---->
+                      <!---->
+                      <!---->
+                      <!---->
+                    </div>
+                    <transition-stub name="el-zoom-in-top">
+                      <!---->
+                    </transition-stub>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3>我是默认插槽</h3>
+            </div>
+            <div>
+              <h3>我是自定义提交按钮</h3>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LinkForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>取消</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`RulesForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>取消</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`SimpleForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>取消</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`SlotForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <h3>我是自定义的表单项</h3>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="slotField-name" class="el-form-item__label" style="width: 100px;">一个自定义输入元素的表单项</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <h3>我是表单项的自定义输入元素</h3>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3>我是默认插槽</h3>
+  </div>
+  <div>
+    <h3>我是自定义提交按钮</h3>
+  </div>
+</form>
+`;
+
+exports[`TextForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定以及肯定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>狠心放弃</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`UiForm 1`] = `
+<form class="el-form" label-width="100px">
+  <div class="el-row">
+    <div class="el-col el-col-12">
+      <div class="el-form-item is-required"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+    <div class="el-col el-col-12">
+      <div class="el-form-item is-required"><label for="name2" class="el-form-item__label" style="width: 100px;">活动名称2</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-12">
+      <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+    <div class="el-col el-col-12">
+      <div class="el-form-item"><label for="delivery2" class="el-form-item__label" style="width: 100px;">即时配送2</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+            <!----><span class="el-switch__core" style="width: 40px;"></span>
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="el-row">
+    <div class="el-col el-col-24">
+      <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+        <div class="el-form-item__content" style="margin-left: 100px;">
+          <div class="el-input">
+            <!----><input type="text" autocomplete="off" class="el-input__inner">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <transition-stub name="el-zoom-in-top">
+            <!---->
+          </transition-stub>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>取消</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
+`;
