@@ -31,7 +31,7 @@
         </el-card>
       </el-col>
       <el-col :span="12">
-        <el-card header="简单场景 - 表单默认插槽">
+        <el-card header="简单场景 - 插槽">
           <SlotForm />
         </el-card>
       </el-col>
