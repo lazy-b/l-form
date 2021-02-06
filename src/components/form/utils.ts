@@ -1,12 +1,6 @@
 import { CustomConfig, NormalizeConfig, ItemConfig, TypeMap } from './index.d';
 import { pick } from 'lodash-es';
-// 内置的组件映射
-export const INNER_COMPONENT: TypeMap = {
-  slot: { component: 'slot' },
-  slotField: { component: 'slotField' },
-};
-
-const DEFAULT_TAG = 'div'; // 什么都无法匹配到时，回退的标签
+import { DEFAULT_TAG, FORM_ITEM_PROP_KEYS, INNER_CONFIG_KEYS } from './constants';
 
 /**
  *判断是否是函数
@@ -29,7 +23,7 @@ const getKey = (config: CustomConfig) => config.key || JSON.stringify(config);
 const getTrue = () => true;
 const getPropsFn = (data: object) => () => data;
 
-const DELETE_KEYS = ['key', 'props', 'label', 'modifiers', 'ifRender', 'labelWidth', 'required'];
+const DELETE_KEYS = [...FORM_ITEM_PROP_KEYS, ...INNER_CONFIG_KEYS];
 
 function normalizeItemConfig(config: CustomConfig, typeMap: TypeMap): NormalizeConfig {
   const conf = { ...config };
@@ -38,18 +32,7 @@ function normalizeItemConfig(config: CustomConfig, typeMap: TypeMap): NormalizeC
   itemConf.modifiers = conf.modifiers || [];
   itemConf.ifRender = conf.ifRender || getTrue;
 
-  const formItem = pick(conf, [
-    'required',
-    'rules',
-    'error',
-    'show-message',
-    'showMessage',
-    'label-width',
-    'labelWidth',
-    'inline-message',
-    'inlineMessage',
-    'size',
-  ]);
+  const formItem = pick(conf, FORM_ITEM_PROP_KEYS);
 
   itemConf.formItem = {
     ...formItem,

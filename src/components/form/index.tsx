@@ -1,12 +1,8 @@
 import Vue from 'vue';
 import { CustomConfig, NormalizeConfig, ItemConfig, CustomUiConfig, NormalizeUiConfig, UiConfg } from './index.d';
 import { cloneDeep, pick } from 'lodash-es';
-import { computeItems, normConfigs, INNER_COMPONENT, getType } from './utils';
-
-const CLASS_PREFEX = 'l-form';
-const FORM_TAG = 'el-form';
-const FORM_ITEM_TAG = 'el-form-item';
-const FOOTER_BUTTON_TAG = 'el-button';
+import { computeItems, normConfigs, getType } from './utils';
+import { INNER_COMPONENT, CLASS_PREFEX, FORM_TAG, FORM_ITEM_TAG, FOOTER_BUTTON_TAG } from './constants';
 
 const { stringify } = JSON;
 
