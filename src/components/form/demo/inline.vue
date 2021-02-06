@@ -1,6 +1,6 @@
 <template>
-  <!-- 简单场景 -->
-  <LForm ref="simple" :config="config" label-width="100px" @submit="submit"></LForm>
+  <!-- 简单场景 - inline 表单 -->
+  <LForm ref="inline" inline :config="config" label-width="100px" @submit="submit"></LForm>
 </template>
 
 <script lang="ts">
@@ -8,7 +8,7 @@ import Vue from 'vue';
 import LForm from '../index';
 
 export default Vue.extend({
-  name: 'SimpleDemo',
+  name: 'InlineDemo',
 
   components: { LForm },
 

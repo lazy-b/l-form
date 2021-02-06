@@ -59,7 +59,6 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div></div>
             <div class="el-form-item l-form_footer">
               <!---->
               <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -134,10 +133,73 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div></div>
             <div class="el-form-item l-form_footer">
               <!---->
               <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
+                  <!---->
+                  <!----><span>确定</span>
+                </button><button type="button" class="el-button el-button--default">
+                  <!---->
+                  <!----><span>取消</span>
+                </button>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-20 el-row" style="margin-left: -10px; margin-right: -10px;">
+    <div class="el-col el-col-24" style="padding-left: 10px; padding-right: 10px;">
+      <div class="el-card is-always-shadow">
+        <div class="el-card__header">简单场景 - inline表单</div>
+        <div class="el-card__body">
+          <form class="el-form el-form--inline" inline="" label-width="100px">
+            <div class="el-form-item"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+              <div class="el-form-item__content">
+                <div class="el-input">
+                  <!----><input type="text" autocomplete="off" class="el-input__inner">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+            <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+              <div class="el-form-item__content">
+                <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+                  <!----><span class="el-switch__core" style="width: 40px;"></span>
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+            <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+              <div class="el-form-item__content">
+                <div class="el-input">
+                  <!----><input type="text" autocomplete="off" class="el-input__inner">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+                <transition-stub name="el-zoom-in-top">
+                  <!---->
+                </transition-stub>
+              </div>
+            </div>
+            <div class="el-form-item l-form_footer">
+              <!---->
+              <div class="el-form-item__content"><button type="button" class="el-button el-button--primary">
                   <!---->
                   <!----><span>确定</span>
                 </button><button type="button" class="el-button el-button--default">
@@ -240,7 +302,6 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div></div>
             <div class="el-form-item l-form_footer">
               <!---->
               <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -315,7 +376,6 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div></div>
             <div class="el-form-item l-form_footer">
               <!---->
               <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -392,7 +452,6 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div></div>
             <div class="el-form-item l-form_footer">
               <!---->
               <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -484,18 +543,72 @@ exports[`DemoContainer 1`] = `
                 </div>
               </div>
             </div>
-            <div>
-              <h3>我是默认插槽</h3>
-            </div>
-            <div>
-              <h3>我是自定义提交按钮</h3>
-            </div>
+            <h3>我是默认插槽</h3>
+            <h3>我是自定义提交按钮</h3>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+`;
+
+exports[`InlineForm 1`] = `
+<form class="el-form el-form--inline" inline="" label-width="100px">
+  <div class="el-form-item"><label for="name" class="el-form-item__label" style="width: 100px;">活动名称</label>
+    <div class="el-form-item__content">
+      <div class="el-input">
+        <!----><input type="text" autocomplete="off" class="el-input__inner">
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </div>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+  <div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 100px;">即时配送</label>
+    <div class="el-form-item__content">
+      <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input">
+        <!----><span class="el-switch__core" style="width: 40px;"></span>
+        <!---->
+      </div>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+  <div class="el-form-item"><label for="desc" class="el-form-item__label" style="width: 100px;">备注</label>
+    <div class="el-form-item__content">
+      <div class="el-input">
+        <!----><input type="text" autocomplete="off" class="el-input__inner">
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </div>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+  <div class="el-form-item l-form_footer">
+    <!---->
+    <div class="el-form-item__content"><button type="button" class="el-button el-button--primary">
+        <!---->
+        <!----><span>确定</span>
+      </button><button type="button" class="el-button el-button--default">
+        <!---->
+        <!----><span>取消</span>
+      </button>
+      <transition-stub name="el-zoom-in-top">
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</form>
 `;
 
 exports[`LinkForm 1`] = `
@@ -551,7 +664,6 @@ exports[`LinkForm 1`] = `
       </div>
     </div>
   </div>
-  <div></div>
   <div class="el-form-item l-form_footer">
     <!---->
     <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -622,7 +734,6 @@ exports[`RulesForm 1`] = `
       </div>
     </div>
   </div>
-  <div></div>
   <div class="el-form-item l-form_footer">
     <!---->
     <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -693,7 +804,6 @@ exports[`SimpleForm 1`] = `
       </div>
     </div>
   </div>
-  <div></div>
   <div class="el-form-item l-form_footer">
     <!---->
     <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -781,12 +891,8 @@ exports[`SlotForm 1`] = `
       </div>
     </div>
   </div>
-  <div>
-    <h3>我是默认插槽</h3>
-  </div>
-  <div>
-    <h3>我是自定义提交按钮</h3>
-  </div>
+  <h3>我是默认插槽</h3>
+  <h3>我是自定义提交按钮</h3>
 </form>
 `;
 
@@ -843,7 +949,6 @@ exports[`TextForm 1`] = `
       </div>
     </div>
   </div>
-  <div></div>
   <div class="el-form-item l-form_footer">
     <!---->
     <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">
@@ -943,7 +1048,6 @@ exports[`UiForm 1`] = `
       </div>
     </div>
   </div>
-  <div></div>
   <div class="el-form-item l-form_footer">
     <!---->
     <div class="el-form-item__content" style="margin-left: 100px;"><button type="button" class="el-button el-button--primary">

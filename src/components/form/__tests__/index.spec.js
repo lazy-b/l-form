@@ -3,6 +3,7 @@ import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 import SimpleForm from '../demo/simple';
 import RulesForm from '../demo/rules';
+import InlineForm from '../demo/inline';
 import UiForm from '../demo/ui';
 import LinkForm from '../demo/link';
 import TextForm from '../demo/text';
@@ -18,6 +19,10 @@ test('DemoContainer', () => {
 });
 test('SimpleForm', () => {
   const wrapper = mount(SimpleForm, { localVue });
+  expect(wrapper).toMatchSnapshot();
+});
+test('InlineForm', () => {
+  const wrapper = mount(InlineForm, { localVue });
   expect(wrapper).toMatchSnapshot();
 });
 test('RulesForm', () => {

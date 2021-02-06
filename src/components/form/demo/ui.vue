@@ -1,6 +1,6 @@
 <template>
   <!-- 简单场景 - 自定义布局 -->
-  <LForm ref="ui" v-model="form" :config="config" label-width="100px" @submit="submit"></LForm>
+  <LForm ref="ui" :config="config" label-width="100px" @submit="submit"></LForm>
 </template>
 
 <script lang="ts">
@@ -14,8 +14,6 @@ export default Vue.extend({
 
   data() {
     return {
-      form: {},
-
       config: {
         formItems: [
           {
@@ -43,8 +41,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });

@@ -73,8 +73,9 @@ export default {
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    // ts 类型注释
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 };
@@ -108,8 +109,8 @@ export default {
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 };
@@ -154,8 +155,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });
@@ -198,8 +199,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });
@@ -252,8 +253,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });
@@ -308,7 +309,7 @@ export default Vue.extend({
 > props 取值顺序是：typeMap.props -> item.props  
 > 后面对象的同名属性会覆盖前面的对象的同名属性，使用的 Object.assign 实现  
 
-> type 为 slot 类型的表单项，其实是一个 slot 占位，slot 名与 key 或者 slot 属性的值相同  
+> type 为 slot / slotField 类型的表单项，其实是一个 slot 占位，slot 名与 key 或者 slot 属性的值相同  
 
 ### ui
 

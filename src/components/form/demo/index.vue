@@ -13,6 +13,13 @@
       </el-col>
     </el-row>
     <el-row :gutter="20" class="mt-20">
+      <el-col :span="24">
+        <el-card header="简单场景 - inline表单">
+          <InlineForm />
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20" class="mt-20">
       <el-col :span="12">
         <el-card header="简单场景 - 自定义布局">
           <UiForm />
@@ -43,6 +50,7 @@
 import Vue from 'vue';
 import SimpleForm from './simple.vue';
 import RulesForm from './rules.vue';
+import InlineForm from './inline.vue';
 import UiForm from './ui.vue';
 import LinkForm from './link.vue';
 import TextForm from './text.vue';
@@ -51,7 +59,7 @@ import SlotForm from './slot.vue';
 export default Vue.extend({
   name: 'Demo',
 
-  components: { SimpleForm, RulesForm, UiForm, LinkForm, TextForm, SlotForm },
+  components: { SimpleForm, InlineForm, RulesForm, UiForm, LinkForm, TextForm, SlotForm },
 });
 </script>
 

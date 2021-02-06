@@ -1,6 +1,6 @@
 <template>
   <!-- 简单场景 - 自定义提交按钮文本 -->
-  <LForm ref="rules" v-model="form" :config="config" label-width="100px" @submit="submit"></LForm>
+  <LForm ref="text" :config="config" label-width="100px" @submit="submit"></LForm>
 </template>
 
 <script lang="ts">
@@ -14,8 +14,6 @@ export default Vue.extend({
 
   data() {
     return {
-      form: {},
-
       config: {
         form: {
           submitText: ['确定以及肯定', '狠心放弃'],
@@ -44,8 +42,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });

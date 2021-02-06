@@ -1,6 +1,6 @@
 <template>
   <!-- 简单场景 - 插槽 -->
-  <LForm ref="rules" v-model="form" :config="config" label-width="100px" @submit="submit">
+  <LForm ref="slot" :config="config" label-width="100px" @submit="submit">
     <h3 slot="slot-name">我是自定义的表单项</h3>
     <h3 slot="slotField-name">我是表单项的自定义输入元素</h3>
     <h3>我是默认插槽</h3>
@@ -19,8 +19,6 @@ export default Vue.extend({
 
   data() {
     return {
-      form: {},
-
       config: {
         form: {
           submitText: ['确定以及肯定', '狠心放弃'],
@@ -51,8 +49,8 @@ export default Vue.extend({
   },
 
   methods: {
-    submit() {
-      this.$message.info(`提交：${JSON.stringify(this.form)}`);
+    submit(form: object) {
+      this.$message.info(`提交：${JSON.stringify(form)}`);
     },
   },
 });
