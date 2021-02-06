@@ -268,6 +268,37 @@ const LForm = Vue.extend({
       this.fields = fields;
     },
 
+    // 渲染 inline 模式下的表单项区域
+    $$renderInlineMain() {
+      const { $$renderItem, fields } = this;
+      const inlineMain = fields.map($$renderItem);
+      return inlineMain;
+    },
+
+    // 渲染表单项区域
+    $$renderMain() {
+      const { layouts, $$renderItem } = this;
+      const main = layouts.map((ui: UiConfg) => {
+        const cols = ui.cols.map((col) => {
+          const colProp = { ...col } as any;
+          const $$key = col.$$key;
+          const field = col.$$field;
+          delete colProp.$$key;
+          delete colProp.$$field;
+
+          return (
+            <el-col {...{ props: colProp }} key={$$key}>
+              {$$renderItem(field)}
+            </el-col>
+          );
+        });
+
+        return <el-row {...{ props: ui.row }}>{cols}</el-row>;
+      });
+
+      return main;
+    },
+
     /**
      * 渲染表单的一个元素
      * @param field 当前元素的配置信息
@@ -281,6 +312,7 @@ const LForm = Vue.extend({
       let children;
       let modelKey;
       let getInner;
+      const formItemKey = 'form_item_' + key;
 
       switch (component) {
         case 'slot':
@@ -288,7 +320,11 @@ const LForm = Vue.extend({
           break;
         case 'slotField':
           children = this.$slots[slot || key];
-          item = <FORM_ITEM_TAG props={formItem}>{children}</FORM_ITEM_TAG>;
+          item = (
+            <FORM_ITEM_TAG key={formItemKey} props={formItem}>
+              {children}
+            </FORM_ITEM_TAG>
+          );
           break;
 
         default:
@@ -317,7 +353,11 @@ const LForm = Vue.extend({
 
             return inner;
           };
-          item = <FORM_ITEM_TAG props={formItem}>{getInner(modelKey)}</FORM_ITEM_TAG>;
+          item = (
+            <FORM_ITEM_TAG key={formItemKey} props={formItem}>
+              {getInner(modelKey)}
+            </FORM_ITEM_TAG>
+          );
           break;
       }
 
@@ -380,8 +420,8 @@ const LForm = Vue.extend({
 
   render(_c) {
     const {
-      layouts,
-      $$renderItem,
+      $$renderInlineMain,
+      $$renderMain,
       form,
       $attrs = {},
       $slots,
@@ -389,27 +429,21 @@ const LForm = Vue.extend({
       config: { form: formConfig },
     } = this as any;
 
-    const main = layouts.map((ui: UiConfg) => {
-      const cols = ui.cols.map((col) => {
-        const colProp = { ...col } as any;
-        const $$key = col.$$key;
-        const field = col.$$field;
-        delete colProp.$$key;
-        delete colProp.$$field;
+    const inline = $attrs.inline || $attrs.inline === '' || (formConfig || {}).inline;
+    const main = inline ? $$renderInlineMain() : $$renderMain();
 
-        return (
-          <el-col {...{ props: colProp }} key={$$key}>
-            {$$renderItem(field)}
-          </el-col>
-        );
-      });
+    const children = [...main];
+    if ($slots.default) {
+      children.push($slots.default);
+    }
 
-      return <el-row {...{ props: ui.row }}>{cols}</el-row>;
-    });
-    // const items = fields.map((field: any) => $$renderItem(field));
+    if ($slots.footer) {
+      children.push($slots.footer);
+    } else {
+      children.push($$renderFooter());
+    }
 
-    // console.log(this.layouts)
-    // jsx 插件 将 model 识别为了 v-model 会报错
+    // jsx 插件 将 model 识别为了 v-model 会报错，所以使用 _c 方法
     // return (
     //   <FORM_TAG
     //     // model={form}
@@ -418,7 +452,6 @@ const LForm = Vue.extend({
     //     {items}
     //   </FORM_TAG>
     // );
-
     return _c(
       FORM_TAG,
       {
@@ -429,7 +462,7 @@ const LForm = Vue.extend({
         },
         ref: 'rawForm',
       },
-      [...main, _c('div', $slots.default), $slots.footer ? _c('div', $slots.footer) : $$renderFooter()]
+      children
     );
   },
 });
